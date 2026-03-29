@@ -17,12 +17,10 @@ color = Color(0.4, 0.65, 0.9, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1667096525]
 layout_mode = 0
-anchor_left = 0.5
+anchor_left = 0.02
 anchor_top = 0.02
-anchor_right = 0.5
+anchor_right = 0.98
 anchor_bottom = 0.98
-offset_left = -350.0
-offset_right = 350.0
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=47881523]
 layout_mode = 2
@@ -94,6 +92,7 @@ horizontal_alignment = 1
 
 [node name="SelectButton" type="Button" parent="VBoxContainer/CharacterCards/FarmerCard/FarmerInfo" unique_id=88607518]
 layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
 text = "Play as Farmer"
 
 [node name="PaulCard" type="PanelContainer" parent="VBoxContainer/CharacterCards" unique_id=2036057828]
@@ -118,4 +117,14 @@ horizontal_alignment = 1
 
 [node name="SelectButton" type="Button" parent="VBoxContainer/CharacterCards/PaulCard/PaulInfo" unique_id=1207877609]
 layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
 text = "Play as Paul"
+
+[node name="Spacer4" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 5)
+
+[node name="FullscreenButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+text = "Tap for Fullscreen"

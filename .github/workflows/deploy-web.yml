@@ -59,7 +59,7 @@ jobs:
           html/head_include=""
           html/canvas_resize_policy=2
           html/focus_canvas_on_start=true
-          html/experimental_virtual_keyboard=false
+          html/experimental_virtual_keyboard=true
           progressive_web_app/enabled=false
           EOF
 
@@ -67,6 +67,10 @@ jobs:
         run: |
           mkdir -p build/web
           godot --headless --export-release "Web" build/web/index.html 2>&1
+
+      - name: Patch HTML for mobile fullscreen
+        run: |
+          sed -i 's|<head>|<head>\n<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">\n<meta name="mobile-web-app-capable" content="yes">\n<meta name="apple-mobile-web-app-capable" content="yes">\n<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">\n<style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:100%;height:100%;overflow:hidden;background:#000;touch-action:none}canvas{display:block;width:100vw!important;height:100vh!important;max-width:100%!important;max-height:100%!important}</style>|' build/web/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
