@@ -33,5 +33,5 @@ text = "Score: 0"
 [node name="ControlsHint" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
-text = "Space=Collect  S=Drop  R=Restart"
+text = "Space/✋=Collect  S/▼=Drop  R=Restart"
 modulate = Color(1, 1, 1, 0.5)
