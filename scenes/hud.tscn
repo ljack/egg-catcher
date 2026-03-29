@@ -29,3 +29,9 @@ text = "Basket: 0/6"
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 text = "Score: 0"
+
+[node name="ControlsHint" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Space=Collect  S=Drop  R=Restart"
+modulate = Color(1, 1, 1, 0.5)

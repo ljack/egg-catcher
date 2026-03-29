@@ -18,16 +18,51 @@ color = Color(0.4, 0.65, 0.9, 1)
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1667096525]
 layout_mode = 0
 anchor_left = 0.5
-anchor_top = 0.15
+anchor_top = 0.02
 anchor_right = 0.5
-anchor_bottom = 0.85
-offset_left = -250.0
-offset_right = 250.0
+anchor_bottom = 0.98
+offset_left = -350.0
+offset_right = 350.0
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=47881523]
 layout_mode = 2
 text = "EGG CATCHER"
 horizontal_alignment = 1
+
+[node name="GoalLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Collect eggs from chickens and bring them to the incubator (hautomakone).
+Hatch chicks to score points. Reach 100 points to win!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer1" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 5)
+
+[node name="ControlsPanel" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ControlsLabel" type="Label" parent="VBoxContainer/ControlsPanel"]
+layout_mode = 2
+text = "CONTROLS:  WASD / Arrow Keys = Move & Jump  |  Space = Collect Egg  |  S / Down = Drop through platform  |  R = Restart"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 5)
+
+[node name="TipsLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "TIPS: Eggs auto-deposit when you walk near the incubator. Beasts steal uncollected eggs!
+Chickens will sit on their eggs - grab them before they self-incubate!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer3" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 8)
 
 [node name="Subtitle" type="Label" parent="VBoxContainer" unique_id=1740551811]
 layout_mode = 2
