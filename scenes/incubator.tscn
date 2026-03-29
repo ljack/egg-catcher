@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bse010ps4g75o"]
+
+[ext_resource type="Script" uid="uid://yr74vcq1t8c" path="res://scripts/incubator.gd" id="1_p60hl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1b0ug"]
+size = Vector2(120, 60)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lof3x"]
+radius = 80.0
+
+[node name="Incubator" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_p60hl")
+
+[node name="Body" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-55, -40, 55, -40, 60, 10, -60, 10)
+color = Color(0.85, 0.5, 0.15, 1)
+
+[node name="Lid" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-58, -46, 58, -46, 55, -40, -55, -40)
+color = Color(0.7, 0.4, 0.1, 1)
+
+[node name="Glow" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-45, -35, 45, -35, 50, 5, -50, 5)
+color = Color(1, 0.8, 0.2, 0)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1b0ug")
+
+[node name="DepositZone" type="Area2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DepositZone"]
+shape = SubResource("CircleShape2D_lof3x")
+
+[node name="HatchTimer" type="Timer" parent="."]
+
+[node name="EggCountLabel" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -65.0
+offset_right = 30.0
+offset_bottom = -45.0
+text = "0 eggs"
+horizontal_alignment = 1

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://eo30kruldshw"]
+
+[ext_resource type="Script" uid="uid://d2i0qfx8gixek" path="res://scripts/hud.gd" id="1_ahhtf"]
+
+[node name="HUD" type="CanvasLayer" unique_id=616306340]
+script = ExtResource("1_ahhtf")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=986710843]
+anchors_preset = 10
+anchor_right = 1.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=311802567]
+layout_mode = 2
+
+[node name="CharacterLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1403069386]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Farmer"
+
+[node name="BasketLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1215965429]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Basket: 0/6"
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1614507212]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Score: 0"

@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://2yvq6yiiep7y"]
+
+[ext_resource type="Script" uid="uid://lsramyavebwd" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[node name="MainMenu" type="Control" unique_id=1450332117]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_l6cm7")
+
+[node name="Background" type="ColorRect" parent="." unique_id=706281615]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.4, 0.65, 0.9, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1667096525]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.15
+anchor_right = 0.5
+anchor_bottom = 0.85
+offset_left = -250.0
+offset_right = 250.0
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=47881523]
+layout_mode = 2
+text = "EGG CATCHER"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="VBoxContainer" unique_id=1740551811]
+layout_mode = 2
+text = "Choose your character:"
+horizontal_alignment = 1
+
+[node name="CharacterCards" type="HBoxContainer" parent="VBoxContainer" unique_id=783978980]
+layout_mode = 2
+
+[node name="FarmerCard" type="PanelContainer" parent="VBoxContainer/CharacterCards" unique_id=2039676609]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FarmerInfo" type="VBoxContainer" parent="VBoxContainer/CharacterCards/FarmerCard" unique_id=1757691333]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="VBoxContainer/CharacterCards/FarmerCard/FarmerInfo" unique_id=1862366070]
+layout_mode = 2
+text = "FARMER"
+horizontal_alignment = 1
+
+[node name="Stats" type="Label" parent="VBoxContainer/CharacterCards/FarmerCard/FarmerInfo" unique_id=446978554]
+layout_mode = 2
+text = "Speed: Normal
+Jump: High
+Basket: 6 eggs"
+horizontal_alignment = 1
+
+[node name="SelectButton" type="Button" parent="VBoxContainer/CharacterCards/FarmerCard/FarmerInfo" unique_id=88607518]
+layout_mode = 2
+text = "Play as Farmer"
+
+[node name="PaulCard" type="PanelContainer" parent="VBoxContainer/CharacterCards" unique_id=2036057828]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PaulInfo" type="VBoxContainer" parent="VBoxContainer/CharacterCards/PaulCard" unique_id=651080196]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="VBoxContainer/CharacterCards/PaulCard/PaulInfo" unique_id=2041710357]
+layout_mode = 2
+text = "PAUL THE ALIEN"
+horizontal_alignment = 1
+
+[node name="Stats" type="Label" parent="VBoxContainer/CharacterCards/PaulCard/PaulInfo" unique_id=1033927686]
+layout_mode = 2
+text = "Speed: Fast
+Jump: Medium
+Basket: 4 eggs"
+horizontal_alignment = 1
+
+[node name="SelectButton" type="Button" parent="VBoxContainer/CharacterCards/PaulCard/PaulInfo" unique_id=1207877609]
+layout_mode = 2
+text = "Play as Paul"

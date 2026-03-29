@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://yicge48108e0"]
+
+[ext_resource type="Script" uid="uid://b5pfgr3shrbr0" path="res://scripts/game.gd" id="1_dinhu"]
+[ext_resource type="PackedScene" uid="uid://cgqpg3bl07ghk" path="res://scenes/platform.tscn" id="2_kvuet"]
+[ext_resource type="PackedScene" uid="uid://dhts17jnxvujl" path="res://scenes/chicken.tscn" id="3_trtic"]
+[ext_resource type="PackedScene" uid="uid://b1ftlxt8rtlyq" path="res://scenes/beast.tscn" id="5_ca42v"]
+[ext_resource type="PackedScene" uid="uid://bse010ps4g75o" path="res://scenes/incubator.tscn" id="7_ssvqc"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="9_1kice"]
+[ext_resource type="PackedScene" uid="uid://eo30kruldshw" path="res://scenes/hud.tscn" id="11_37s47"]
+[ext_resource type="AudioStream" uid="uid://bisiopwcgarpn" path="res://audio/background_music.mp3" id="13_kvuet"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(1152, 24)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_dinhu")
+
+[node name="Sky" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 0, 648)
+color = Color(0.5, 0.75, 0.95, 1)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(576, 636)
+
+[node name="GroundVisual" type="Polygon2D" parent="Ground"]
+polygon = PackedVector2Array(-576, -12, 576, -12, 576, 12, -576, 12)
+color = Color(0.35, 0.25, 0.15, 1)
+
+[node name="GroundGrass" type="Polygon2D" parent="Ground"]
+polygon = PackedVector2Array(-576, -16, 576, -16, 576, -10, -576, -10)
+color = Color(0.3, 0.65, 0.2, 1)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="Platform1" parent="." instance=ExtResource("2_kvuet")]
+position = Vector2(120, 530)
+
+[node name="Platform2" parent="." instance=ExtResource("2_kvuet")]
+position = Vector2(450, 450)
+
+[node name="Platform3" parent="." instance=ExtResource("2_kvuet")]
+position = Vector2(150, 350)
+
+[node name="Platform4" parent="." instance=ExtResource("2_kvuet")]
+position = Vector2(500, 260)
+
+[node name="Platform5" parent="." instance=ExtResource("2_kvuet")]
+position = Vector2(850, 530)
+
+[node name="Platform6" parent="." instance=ExtResource("2_kvuet")]
+position = Vector2(950, 400)
+
+[node name="Platform7" parent="." instance=ExtResource("2_kvuet")]
+position = Vector2(750, 300)
+
+[node name="Platform8" parent="." instance=ExtResource("2_kvuet")]
+position = Vector2(350, 150)
+
+[node name="Chicken1" parent="." instance=ExtResource("3_trtic")]
+position = Vector2(120, 493)
+
+[node name="Chicken2" parent="." instance=ExtResource("3_trtic")]
+position = Vector2(450, 413)
+
+[node name="Chicken3" parent="." instance=ExtResource("3_trtic")]
+position = Vector2(150, 313)
+
+[node name="Chicken4" parent="." instance=ExtResource("3_trtic")]
+position = Vector2(500, 223)
+
+[node name="Chicken5" parent="." instance=ExtResource("3_trtic")]
+position = Vector2(850, 493)
+
+[node name="Chicken6" parent="." instance=ExtResource("3_trtic")]
+position = Vector2(950, 363)
+
+[node name="Chicken7" parent="." instance=ExtResource("3_trtic")]
+position = Vector2(750, 263)
+
+[node name="Beast1" parent="." instance=ExtResource("5_ca42v")]
+position = Vector2(100, 610)
+
+[node name="Beast2" parent="." instance=ExtResource("5_ca42v")]
+position = Vector2(1000, 610)
+
+[node name="Incubator" parent="." instance=ExtResource("7_ssvqc")]
+position = Vector2(576, 610)
+
+[node name="Player" parent="." instance=ExtResource("9_1kice")]
+position = Vector2(700, 600)
+
+[node name="HUD" parent="." instance=ExtResource("11_37s47")]
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_kvuet")
+volume_db = -5.0
+autoplay = true

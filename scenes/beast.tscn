@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b1ftlxt8rtlyq"]
+
+[ext_resource type="Script" uid="uid://j51y5hnbgt1y" path="res://scripts/beast.gd" id="1_10t74"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nfgux"]
+radius = 18.0
+height = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qx1v6"]
+radius = 20.0
+
+[node name="Beast" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_10t74")
+
+[node name="Body" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, -28, 16, -16, 24, -24, 20, -4, 28, 0, 16, 12, 20, 24, 4, 16, -8, 24, -12, 12, -28, 8, -16, -4, -24, -16, -12, -12)
+color = Color(0.25, 0.15, 0.3, 1)
+
+[node name="Eyes" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(4, -12, 12, -12, 12, -4, 4, -4)
+color = Color(1, 0.2, 0.2, 1)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_nfgux")
+
+[node name="StealArea" type="Area2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="StealArea"]
+shape = SubResource("CircleShape2D_qx1v6")

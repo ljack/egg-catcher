@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dhts17jnxvujl"]
+
+[ext_resource type="Script" uid="uid://jisuwmwcwl2s" path="res://scripts/chicken.gd" id="1_8lku0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1yv3s"]
+radius = 20.0
+height = 40.0
+
+[node name="Chicken" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 1
+script = ExtResource("1_8lku0")
+
+[node name="Body" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-22, -10, 22, -10, 26, 4, 22, 16, -22, 16, -26, 4)
+color = Color(0.95, 0.95, 0.9, 1)
+
+[node name="Head" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(12, -26, 28, -26, 30, -12, 12, -12)
+color = Color(0.95, 0.95, 0.9, 1)
+
+[node name="Comb" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(16, -34, 20, -26, 24, -34, 28, -26)
+color = Color(0.9, 0.15, 0.1, 1)
+
+[node name="Beak" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(30, -22, 38, -19, 30, -16)
+color = Color(1, 0.6, 0.1, 1)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_1yv3s")
+
+[node name="EggLayTimer" type="Timer" parent="."]
+wait_time = 8.0

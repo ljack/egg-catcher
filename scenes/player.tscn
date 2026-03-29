@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://be8qbmt0fe144"]
+
+[ext_resource type="Script" uid="uid://c5qu2jsf0ki1p" path="res://scripts/player.gd" id="1_3vyb7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 18.0
+height = 70.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
+radius = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
+radius = 60.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_3vyb7")
+
+[node name="Body" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-16, -15, 16, -15, 20, 5, 16, 30, -16, 30, -20, 5)
+color = Color(0.2, 0.4, 0.8, 1)
+
+[node name="Head" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-14, -38, 14, -38, 16, -18, -16, -18)
+color = Color(0.9, 0.75, 0.6, 1)
+
+[node name="Hat" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-22, -46, 22, -46, 18, -38, -18, -38)
+color = Color(0.6, 0.4, 0.2, 1)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_g2els")
+
+[node name="CollectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="CollectArea"]
+shape = SubResource("CircleShape2D_qhqgy")
+
+[node name="DepositArea" type="Area2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DepositArea"]
+shape = SubResource("CircleShape2D_dqkch")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 648
+
+[node name="BasketLabel" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -60.0
+offset_right = 40.0
+offset_bottom = -45.0
+text = "0/6"
