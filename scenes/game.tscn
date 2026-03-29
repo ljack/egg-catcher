@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bse010ps4g75o" path="res://scenes/incubator.tscn" id="7_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="9_1kice"]
 [ext_resource type="PackedScene" uid="uid://eo30kruldshw" path="res://scenes/hud.tscn" id="11_37s47"]
+[ext_resource type="PackedScene" uid="uid://btchrctrl0sc" path="res://scenes/touch_controls.tscn" id="14_touch"]
 [ext_resource type="AudioStream" uid="uid://bisiopwcgarpn" path="res://audio/background_music.mp3" id="13_kvuet"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
@@ -91,6 +92,8 @@ position = Vector2(576, 610)
 position = Vector2(700, 600)
 
 [node name="HUD" parent="." instance=ExtResource("11_37s47")]
+
+[node name="TouchControls" parent="." instance=ExtResource("14_touch")]
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_kvuet")

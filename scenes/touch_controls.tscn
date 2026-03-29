@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://btchrctrl0sc"]
+
+[ext_resource type="Script" uid="uid://dx9m4n7kzwr2" path="res://scripts/touch_controls.gd" id="1_touch"]
+
+[node name="TouchControls" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_touch")
+
+[node name="Controls" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="LeftButton" type="Button" parent="Controls"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -170.0
+offset_right = 90.0
+offset_bottom = -90.0
+modulate = Color(1, 1, 1, 0.7)
+text = "◀"
+tooltip_text = "Move Left"
+
+[node name="RightButton" type="Button" parent="Controls"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 190.0
+offset_top = -170.0
+offset_right = 270.0
+offset_bottom = -90.0
+modulate = Color(1, 1, 1, 0.7)
+text = "▶"
+tooltip_text = "Move Right"
+
+[node name="JumpButton" type="Button" parent="Controls"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -260.0
+offset_right = 180.0
+offset_bottom = -180.0
+modulate = Color(1, 1, 1, 0.7)
+text = "▲"
+tooltip_text = "Jump"
+
+[node name="DownButton" type="Button" parent="Controls"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -170.0
+offset_right = 180.0
+offset_bottom = -90.0
+modulate = Color(1, 1, 1, 0.7)
+text = "▼"
+tooltip_text = "Drop / Fall Through"
+
+[node name="CollectButton" type="Button" parent="Controls"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -170.0
+offset_right = -10.0
+offset_bottom = -90.0
+modulate = Color(1, 1, 1, 0.7)
+text = "✋"
+tooltip_text = "Collect Eggs"
